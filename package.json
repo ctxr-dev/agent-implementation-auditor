@@ -1,6 +1,6 @@
 {
   "name": "@ctxr/agent-implementation-auditor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read-only auditor that checks implemented work against an approved plan after a build. Reports missed plan items, divergences from locked decisions, and cross-implementation parity gaps, treating additive work as fine. Read-only; uses whatever capabilities the environment provides and never halts when one is missing or unhealthy.",
   "type": "module",
   "license": "MIT",
