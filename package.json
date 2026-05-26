@@ -1,7 +1,7 @@
 {
   "name": "@ctxr/agent-implementation-auditor",
   "version": "1.0.0",
-  "description": "Read-only auditor that checks implemented work against an approved plan. Use it after a build to find missed plan items, divergences from locked decisions, and cross-implementation parity gaps. Scoped tools (no MCP connectors) so it stays immune to a bad connector schema killing subagent init.",
+  "description": "Read-only auditor that checks implemented work against an approved plan after a build. Reports missed plan items, divergences from locked decisions, and cross-implementation parity gaps, treating extra improvements as fine. Carries only Read/Grep/Glob/Bash, so it advertises no MCP connector schema and stays immune to the subagent-init failure that kills all-tools agents.",
   "type": "module",
   "license": "MIT",
   "repository": {
@@ -16,13 +16,14 @@
     "node": ">=18.0.0"
   },
   "files": [
-    "ctxr-agent-implementation-auditor.md",
+    "package.json",
+    "AGENT.md",
     "README.md",
     "LICENSE"
   ],
   "ctxr": {
     "type": "agent",
-    "target": "file"
+    "target": "folder"
   },
   "keywords": [
     "agent-skills",
