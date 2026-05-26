@@ -6,7 +6,7 @@ A read-only conformance-audit subagent for Claude Code, Codex, and OpenCode. Han
 
 Given an approved plan plus the implemented work (a branch, a diff, a set of files), it reads the actual committed code and checks it against the plan's commitments. It returns a tagged list: `[MISS]` for plan items that were not implemented and `[DIVERGENCE]` for work that contradicts a locked decision or the stated intent, each with `file:line`. Work that goes beyond the plan additively is treated as fine, not a divergence. When the plan names two implementations of one contract, it checks they actually agree. It never edits, commits, or pushes.
 
-It carries only Read, Grep, Glob, and Bash (no MCP/connector tools). That least-privilege set is deliberate: an agent that advertises no connector schema cannot be taken down by a malformed one, so it stays spawnable when broader agents do not.
+Its instructions are tool-agnostic: it uses whatever capabilities the environment exposes (the built-in file, search, and shell tools, plus any servers the project provides) and treats them as best-effort. If a capability is missing, unhealthy, or errors, it notes that and falls back rather than halting, so it works across very different setups and never stalls a fan-out because one tool is down. It stays read-only by rule, even where write-capable tools are present.
 
 ## When to use it
 
