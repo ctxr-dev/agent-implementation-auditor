@@ -1,6 +1,6 @@
 {
   "name": "@ctxr/agent-implementation-auditor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Read-only auditor that checks implemented work against an approved plan after a build. Reports missed plan items, divergences from locked decisions, and cross-implementation parity gaps, treating additive work as fine. Read-only; uses whatever capabilities the environment provides and never halts when one is missing or unhealthy.",
   "type": "module",
   "license": "MIT",
@@ -35,7 +35,7 @@
     "ai"
   ],
   "scripts": {
-    "validate": "npx @ctxr/kit validate",
+    "validate": "npx @ctxr/kit@latest validate",
     "lint": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lint:fix": "markdownlint-cli2 --fix '**/*.md' '#node_modules'",
     "prepare": "husky || true"

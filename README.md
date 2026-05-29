@@ -15,7 +15,7 @@ At merge-prep, before declaring a non-trivial piece of work done. Fold its findi
 ## Install
 
 ```bash
-npx @ctxr/kit install @ctxr/agent-implementation-auditor
+npx @ctxr/kit@latest install @ctxr/agent-implementation-auditor
 ```
 
 `@ctxr/kit` installs the bundle and mirrors it into the host's agent directory; the agent then appears as `agent-implementation-auditor`.
